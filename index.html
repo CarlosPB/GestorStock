@@ -51,6 +51,12 @@
 .payment-methods {display: flex;gap: 10px;flex-wrap: wrap;margin-top: 10px;}
 .payment-methods img {height: 34px;object-fit: contain;opacity: 0.95;transition: 0.2s;}
 .payment-methods img:hover {opacity: 1;transform: scale(1.05);}
+    /* FAQ */
+.faq-item {border: 1px solid #e6eef5;border-radius: 8px;margin-top: 12px;background: #fff;}
+.faq-question {width: 100%;background: transparent;border: 0;padding: 14px;text-align: left;font-size: 15px;font-weight: 600;cursor: pointer;color: var(--dark);display: flex;justify-content: space-between;align-items: center;}
+.faq-question::after {content: "▼";font-size: 12px;transition: 0.2s;}
+.faq-item.open .faq-question::after {transform: rotate(180deg);}
+.faq-answer {display: none;padding: 0 14px 14px;font-size: 14px;color: var(--muted);line-height: 1.45;}
   </style>
 </head>
 <body>
@@ -275,6 +281,44 @@
       </div>
     </section>
   </main>
+  <section id="faq" style="margin-top:40px">
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">¿En qué consiste GestorStock?</button>
+    <div class="faq-answer">
+      GestorStock es un software de control de inventarios diseñado especialmente para talleres y fábricas de calzado. Permite registrar entradas/salidas, generar reportes y optimizar la producción.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Necesito conocimientos avanzados para usarlo?</button>
+    <div class="faq-answer">
+      No. El sistema está diseñado para uso sencillo y práctico; además incluye capacitación y soporte por WhatsApp.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Funciona con Excel?</button>
+    <div class="faq-answer">
+      Sí. GestorStock se integra con Excel (Power Query y Power Pivot) para crear reportes automáticos.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Ofrecen soporte en sitio?</button>
+    <div class="faq-answer">
+      Sí, ofrecemos soporte presencial en Bucaramanga y Área Metropolitana, además de soporte remoto.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Qué métodos de pago aceptan?</button>
+    <div class="faq-answer">
+      Aceptamos Nequi, Daviplata, PSE, Visa, Mastercard y Efecty.
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container footer-cols">
@@ -383,17 +427,9 @@
         removeBtn.textContent = '❌';
         removeBtn.style.marginLeft = '8px';
         removeBtn.style.cursor = 'pointer';
-        removeBtn.addEventListener('click', () => {
-          cart.splice(index, 1);
-          updateCart();
-        });
-        li.appendChild(removeBtn);
-        cartItems.appendChild(li);
-        total += item.price;
-      });
-      cartTotal.textContent = total.toLocaleString();
-      cartCount.textContent = cart.length;
-    }
+        removeBtn.addEventListener('click', () => {cart.splice(index, 1);updateCart();});
+        li.appendChild(removeBtn);cartItems.appendChild(li);total += item.price;});
+      cartTotal.textContent = total.toLocaleString();cartCount.textContent = cart.length;}
 
     document.querySelectorAll('.add-to-cart').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -401,8 +437,7 @@
         const price = parseInt(btn.dataset.price);
         cart.push({name, price});
         updateCart();
-        carritoDiv.style.display = 'block';
-      });
+        carritoDiv.style.display = 'block';});
     });
 
     document.getElementById('checkoutBtn').addEventListener('click', () => {
@@ -412,6 +447,17 @@
       carritoDiv.style.display = 'none';
     });
   </script>
+  <script>
+  document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+      item.classList.toggle("open");
+      const ans = item.querySelector(".faq-answer");
+      ans.style.display = ans.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 </body>
 </html>
+
 
