@@ -43,21 +43,14 @@
     .cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;background:#fff;padding:12px;border-radius:10px;border:1px solid #e6eef5;box-shadow:0 8px 20px rgba(11,37,64,0.08);display:flex;justify-content:space-between;gap:12px;align-items:center}
     .hidden{display:none}
     .precio{font-weight:700;color:var(--dark);margin-top:6px;font-size:14px;}
-    /* Estilos carrito */
     #carrito{position:fixed;top:80px;right:16px;width:300px;background:#fff;padding:12px;border-radius:10px;border:1px solid #e6eef5;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:none;z-index:1000}
     #carrito h4{margin:0 0 8px 0;font-size:16px}
     #cartItems{list-style:none;padding:0;margin:0;font-size:13px}
-    /* Servicios horizontal */
     .services-horizontal{display:flex;gap:12px;overflow-x:auto;margin-top:12px}
     .services-horizontal .card{flex:0 0 220px}
-
-    /* Preguntas frecuentes */
-    #faq {margin-top:22px;}
-    #faq h2 {margin-bottom:12px;}
-    #faq .faq-item {background:#fff;border:1px solid #e6eef5;border-radius:10px;margin-bottom:10px;cursor:pointer; padding:12px;}
-    #faq .faq-item:hover {background:#f0f5f9;}
-    #faq .faq-question {font-weight:700; color: var(--dark);}
-    #faq .faq-answer {margin-top:6px; display:none; font-size:13px; color: var(--muted);}
+.payment-methods {display: flex;gap: 10px;flex-wrap: wrap;margin-top: 10px;}
+.payment-methods img {height: 34px;object-fit: contain;filter: brightness(0) invert(1);opacity: 0.85;transition: 0.2s;}
+.payment-methods img:hover {opacity: 1;transform: scale(1.05);}
   </style>
 </head>
 <body>
@@ -78,8 +71,6 @@
           <li><a href="#vision">Visión</a></li>
           <li><a href="#productos">Línea de productos</a></li>
           <li><a href="#blog">Blog</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#pagos">Medios de pago</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -223,108 +214,203 @@
       </div>
     </section>
 
-    <!-- Quienes somos + Misión + Visión -->
-<section id="quienes" style="margin-top:22px">
-  <h2>Quienes somos</h2>
-  <p style="color:var(--muted)">
-    GestorStock nace para apoyar la transformación digital de fábricas de calzado en Bucaramanga y el área metropolitana. Combinamos software sencillo, consultoría y formación para optimizar procesos de inventario y producción, facilitando la toma de decisiones y mejorando la rentabilidad de los talleres y pequeñas fábricas.
-  </p>
-  <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
-    <div class="card" style="flex:1 1 300px;">
-      <strong>Misión</strong>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">
-        Desarrollar e implementar soluciones de control de inventarios accesibles, formando y acompañando a los fabricantes para optimizar sus procesos y reducir pérdidas, impulsando la competitividad del sector calzado local.
+    <section id="quienes" style="margin-top:22px">
+      <h2>Quienes somos</h2>
+      <p style="color:var(--muted)">GestorStock nace para apoyar la transformación digital de fábricas de calzado en Bucaramanga y el área metropolitana. Combinamos software sencillo, consultoría y formación para optimizar procesos de inventario y producción.</p>
+      <div style="display:flex;gap:12px;margin-top:12px">
+        <div class="card">
+          <strong>Misión</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Desarrollar e implementar soluciones de control de inventarios accesibles, formando y acompañando a los fabricantes para optimizar sus procesos y reducir pérdidas.</div>
+        </div>
+        <div class="card">
+          <strong>Visión</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Ser la solución líder en Bucaramanga y el área metropolitana para fábricas de calzado, reconocida por su accesibilidad, eficiencia y cercanía.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" style="margin-top:22px">
+      <h
+    <section id="productos" style="margin-top:22px">
+      <h2>Línea de productos</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <div class="card">
+          <strong>GestorStock Basic</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Licencia simple para registro de entradas, salidas y reportes básicos. Ideal para talleres de calzado.</div>
+          <div class="precio">$2.500.000</div>
+          <button class="btn btn-primary add-to-cart" data-name="GestorStock Basic" data-price="2500000" style="margin-top:6px">Agregar al carrito</button>
+        </div>
+        <div class="card">
+          <strong>GestorStock Pro</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Funciones avanzadas: alertas de reorder, indicadores de rotación, soporte prioritario.</div>
+          <div class="precio">$3.500.000</div>
+          <button class="btn btn-primary add-to-cart" data-name="GestorStock Pro" data-price="3500000" style="margin-top:6px">Agregar al carrito</button>
+        </div>
+        <div class="card">
+          <strong>Consultoría y Formación</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Capacitación in situ, creación de plantillas Power Query / Power Pivot y acompañamiento técnico para fábricas de calzado.</div>
+          <div class="precio">Capacitación: $1.000.000 <br> Consultoría: $1.100.000</div>
+          <button class="btn btn-primary add-to-cart" data-name="Capacitación" data-price="1000000" style="margin-top:6px">Agregar capacitación</button>
+          <button class="btn btn-primary add-to-cart" data-name="Consultoría" data-price="1100000" style="margin-top:6px">Agregar consultoría</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información de contacto con EmailJS -->
+    <section id="contacto" style="margin-top:22px">
+      <h2>Información de contacto</h2>
+      <div style="display:flex;gap:12px;align-items:flex-start;margin-top:8px">
+        <div style="flex:1" class="card">
+          <form id="contactForm">
+            <label>Nombre</label>
+            <input name="cname" required placeholder="Nombre" />
+            <label>Correo</label>
+            <input name="cemail" required type="email" placeholder="correo@ejemplo.com" />
+            <label>Mensaje</label>
+            <textarea name="cmessage" required rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+            <div style="margin-top:12px"><button type="submit" class="btn btn-primary">Enviar mensaje</button></div>
+            <div id="contactMsg" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer>
+  <div class="container footer-cols">
+    <div>
+      <strong>GestorStock</strong>
+      <div style="font-size:13px;color:var(--muted)">Software para control de inventarios en fábricas de calzado.</div>
+    </div>
+
+    <div>
+      <strong>Redes sociales</strong>
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+
+      <!-- ✔️ NUEVO: MEDIOS DE PAGO -->
+      <div style="margin-top:18px">
+        <strong>Medios de pago</strong>
+        <div class="payment-methods">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/nequi.png" alt="Nequi">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/daviplata.png" alt="Daviplata">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/visa.png" alt="Visa">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/mastercard.png" alt="Mastercard">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/pse.png" alt="PSE">
+          <img src="https://raw.githubusercontent.com/CarlosPB/GestorStock/refs/heads/main/efecty.png" alt="Efecty">
+        </div>
       </div>
     </div>
-    <div class="card" style="flex:1 1 300px;">
-      <strong>Visión</strong>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">
-        Ser la solución líder en Bucaramanga y el área metropolitana para fábricas de calzado, reconocida por su accesibilidad, eficiencia, cercanía al cliente y aporte a la modernización del sector.
+
+    <div>
+      <strong>Contacto</strong>
+      <div style="font-size:13px;color:var(--muted)">
+        carlospineda@unc.edu.co<br/>
+        sandrafonseca@unc.edu.co
       </div>
     </div>
   </div>
-</section>
-<!-- Línea de productos -->
-<section id="productos" style="margin-top:22px">
-  <h2>Línea de productos</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
-    <div class="card">
-      <strong>GestorStock Basic</strong>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">Licencia simple para registro de entradas, salidas y reportes básicos. Ideal para talleres de calzado.</div>
-      <div class="precio">$2.500.000</div>
-      <button class="btn btn-primary add-to-cart" data-name="GestorStock Basic" data-price="2500000" style="margin-top:6px">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <strong>GestorStock Pro</strong>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">Funciones avanzadas: alertas de reorder, indicadores de rotación, soporte prioritario.</div>
-      <div class="precio">$3.500.000</div>
-      <button class="btn btn-primary add-to-cart" data-name="GestorStock Pro" data-price="3500000" style="margin-top:6px">Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <strong>Consultoría y Formación</strong>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">Capacitación in situ, creación de plantillas Power Query / Power Pivot y acompañamiento técnico para fábricas de calzado.</div>
-      <div class="precio">
-        Capacitación: $1.000.000 <br>
-        Consultoría: $1.100.000
-      </div>
-      <button class="btn btn-primary add-to-cart" data-name="Capacitación" data-price="1000000" style="margin-top:6px">Agregar capacitación</button>
-      <button class="btn btn-primary add-to-cart" data-name="Consultoría" data-price="1100000" style="margin-top:6px">Agregar consultoría</button>
-    </div>
+</footer>
+
+  <!-- Carrito -->
+  <div id="carrito">
+    <h4>Carrito</h4>
+    <ul id="cartItems"></ul>
+    <div style="margin-top:10px;font-weight:700">Total: $<span id="cartTotal">0</span></div>
+    <button id="checkoutBtn" class="btn btn-primary" style="margin-top:8px">Pagar</button>
   </div>
-</section>
 
-<!-- Preguntas frecuentes -->
-<section id="faq" style="margin-top:22px">
-  <h2>Preguntas frecuentes</h2>
-  <div style="max-width:800px; margin-top:12px;">
-    <details style="margin-bottom:10px; border:1px solid #e6eef5; border-radius:8px; padding:10px; background:#fff;">
-      <summary style="font-weight:700; cursor:pointer;">¿Qué tipo de fábricas pueden usar GestorStock?</summary>
-      <p style="margin-top:8px; color:var(--muted);">GestorStock está diseñado principalmente para talleres y pequeñas fábricas de calzado en Bucaramanga y su área metropolitana, pero puede adaptarse a otros tamaños y sectores relacionados.</p>
-    </details>
-    <details style="margin-bottom:10px; border:1px solid #e6eef5; border-radius:8px; padding:10px; background:#fff;">
-      <summary style="font-weight:700; cursor:pointer;">¿Necesito conocimientos técnicos para usar el software?</summary>
-      <p style="margin-top:8px; color:var(--muted);">No, el sistema está diseñado para ser intuitivo y fácil de usar, con capacitación incluida para asegurar que el personal pueda aprovechar todas sus funcionalidades.</p>
-    </details>
-    <details style="margin-bottom:10px; border:1px solid #e6eef5; border-radius:8px; padding:10px; background:#fff;">
-      <summary style="font-weight:700; cursor:pointer;">¿Cómo se realiza la capacitación y soporte?</summary>
-      <p style="margin-top:8px; color:var(--muted);">Ofrecemos capacitación presencial y remota, además de soporte vía WhatsApp para resolver dudas y problemas en tiempo real.</p>
-    </details>
-  </div>
-</section>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("H39F0BDYm1abGm_pV");
+    })();
 
-<!-- Medios de pago -->
-<section id="pagos" style="margin-top:22px">
-  <h2>Medios de pago</h2>
-  <div style="display:flex; gap:16px; align-items:center; margin-top:12px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Visa_Logo.png/120px-Visa_Logo.png" alt="Visa" style="height:40px;"/>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/120px-Mastercard-logo.png" alt="Mastercard" style="height:40px;"/>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/American_Express_logo_%282018%29.svg/120px-American_Express_logo_%282018%29.svg.png" alt="American Express" style="height:40px;"/>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/120px-PayPal.svg.png" alt="PayPal" style="height:40px;"/>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Diners_Club_Logo3.svg/120px-Diners_Club_Logo3.svg.png" alt="Diners Club" style="height:40px;"/>
-  </div>
-  <p style="color:var(--muted); font-size:13px; margin-top:8px;">
-    Aceptamos tarjetas de crédito, débito y pagos a través de PayPal para mayor comodidad y seguridad.
-  </p>
-</section>
+    // Lead form (con template actualizado)
+    const leadForm = document.getElementById('leadForm');
+    const leadMsg = document.getElementById('leadMsg');
+    leadForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.send("service_wle3i3c", "template_k3cklnm", {
+        name: leadForm.name.value,
+        phone: leadForm.phone.value,
+        email: leadForm.email.value,
+        business: leadForm.business.value,
+        message: leadForm.message.value
+      }).then(() => {
+        leadMsg.textContent = "¡Mensaje enviado correctamente!";
+        leadForm.reset();
+      }).catch(() => {
+        leadMsg.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
+      });
+    });
 
-<!-- Información de contacto con EmailJS -->
-<section id="contacto" style="margin-top:22px">
-  <h2>Información de contacto</h2>
-  <div style="display:flex;gap:12px;align-items:flex-start;margin-top:8px">
-    <div style="flex:1" class="card">
-      <form id="contactForm">
-        <label>Nombre</label>
-        <input name="cname" required placeholder="Nombre" />
-        <label>Correo</label>
-        <input name="cemail" required type="email" placeholder="correo@ejemplo.com" />
-        <label>Mensaje</label>
-        <textarea name="cmessage" required rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
-        <div style="margin-top:12px"><button type="submit" class="btn btn-primary">Enviar mensaje</button></div>
-        <div id="contactMsg" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
-      </form>
-    </div>
-  </div>
-</section>
+    // Contact form (sin cambios)
+    const contactForm = document.getElementById('contactForm');
+    const contactMsg = document.getElementById('contactMsg');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.send("service_wle3i3c", "template_syfd3ds", {
+        cname: contactForm.cname.value,
+        cemail: contactForm.cemail.value,
+        cmessage: contactForm.cmessage.value
+      }).then(() => {
+        contactMsg.textContent = "¡Mensaje enviado correctamente!";
+        contactForm.reset();
+      }).catch(() => {
+        contactMsg.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
+      });
+    });
 
+    // Carrito JS
+    const cart = [];
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.getElementById('cartCount');
+    const carritoDiv = document.getElementById('carrito');
 
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price.toLocaleString()}`;
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '❌';
+        removeBtn.style.marginLeft = '8px';
+        removeBtn.style.cursor = 'pointer';
+        removeBtn.addEventListener('click', () => {
+          cart.splice(index, 1);
+          updateCart();
+        });
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      cartTotal.textContent = total.toLocaleString();
+      cartCount.textContent = cart.length;
+    }
 
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const price = parseInt(btn.dataset.price);
+        cart.push({name, price});
+        updateCart();
+        carritoDiv.style.display = 'block';
+      });
+    });
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      alert('Gracias por su compra. Total: $' + cartTotal.textContent);
+      cart.length = 0;
+      updateCart();
+      carritoDiv.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
