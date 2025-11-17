@@ -158,38 +158,28 @@
     </section>
 
     <!-- Blog + Servicios + Contacta -->
-    <section style="margin-top:18px">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <h2 style="margin:0">Blog informativo</h2>
-        <div class="searchbar" style="width:420px">
-          <input id="searchInput" placeholder="Buscar artículos, p. ej. rotación de inventario" />
-          <button id="searchBtn" class="btn">Buscar</button>
+    <section id="blog-simple" style="margin-top:18px">
+  <h2>Blog informativo</h2>
+  <div style="display:flex; gap:20px; align-items:flex-start; margin-top:12px;">
+    <div style="flex:1;">
+      <ul style="padding-left: 20px; color: var(--dark);">
+        <li><a href="#" style="font-weight:600; text-decoration:none; color:var(--green);">Cómo reducir pérdidas por material y stock en fábricas de calzado</a></li>
+        <li><a href="#" style="font-weight:600; text-decoration:none; color:var(--green);">Integrando GestorStock con Excel: plantillas y Power Query</a></li>
+        <li><a href="#" style="font-weight:600; text-decoration:none; color:var(--green);">Capacitación en sitio: cómo formamos a los fabricantes de calzado</a></li>
+      </ul>
+    </div>
+    <div style="width:320px; position:relative; padding-top:56%; border-radius:8px; overflow:hidden;">
+      <iframe
+        src="https://www.youtube.com/embed/ETLjfH0bmgQ"
+        title="Video GestorStock Shorts"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+      </iframe>
+       </div>
         </div>
-      </div>
-      <div class="grid-2" style="margin-top:12px">
-        <div class="blog-list" id="blog">
-          <div class="post" data-tags="inventario,rotacion">
-            <div style="width:56px;height:56px;background:#e6f7f0;border-radius:8px;display:flex;align-items:center;justify-content:center">📊</div>
-            <div>
-              <a href="#" style="font-weight:700">Cómo reducir pérdidas por material y stock en fábricas de calzado</a>
-              <div style="font-size:13px;color:var(--muted)">Estrategias prácticas y controles sencillos para talleres y fábricas.</div>
-            </div>
-          </div>
-          <div class="post" data-tags="excel,integracion">
-            <div style="width:56px;height:56px;background:#fff3e6;border-radius:8px;display:flex;align-items:center;justify-content:center">🧾</div>
-            <div>
-              <a href="#" style="font-weight:700">Integrando GestorStock con Excel: plantillas y Power Query</a>
-              <div style="font-size:13px;color:var(--muted)">Guía paso a paso para sacar informes automáticos de producción e inventario.</div>
-            </div>
-          </div>
-          <div class="post" data-tags="capacitacion,soporte">
-            <div style="width:56px;height:56px;background:#eef2ff;border-radius:8px;display:flex;align-items:center;justify-content:center">👩‍🏫</div>
-            <div>
-              <a href="#" style="font-weight:700">Capacitación en sitio: cómo formamos a los fabricantes de calzado</a>
-              <div style="font-size:13px;color:var(--muted)">Modelo de formación presencial y remoto para garantizar adopción de herramientas.</div>
-            </div>
-          </div>
-        </div>
+         </div>
         <aside style="width:360px">
           <div class="services-horizontal">
             <div class="card">
@@ -459,5 +449,6 @@
 </script>
 </body>
 </html>
+
 
 
