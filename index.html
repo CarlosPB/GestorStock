@@ -161,11 +161,8 @@
     <section id="blog-simple" style="margin-top:18px">
   <h2>Blog informativo</h2>
 
-  <div style="text-align:center; font-size:24px; margin:6px 0 18px; color: var(--green);">
-    ⬇️
-  </div>
-
-  <div style="display:flex; gap:20px; align-items:flex-start; margin-top:0; flex-wrap: wrap; justify-content: space-between;">
+  <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap: nowrap;">
+    <!-- Lista de posts a la izquierda -->
     <div style="flex:1; min-width:200px;">
       <ul style="padding-left: 20px; color: var(--dark);">
         <li><a href="#" style="font-weight:600; text-decoration:none; color:var(--green);">Cómo reducir pérdidas por material y stock en fábricas de calzado</a></li>
@@ -173,48 +170,37 @@
         <li><a href="#" style="font-weight:600; text-decoration:none; color:var(--green);">Capacitación en sitio: cómo formamos a los fabricantes de calzado</a></li>
       </ul>
     </div>
-    <div style="margin-left:auto;">
-      <iframe 
-        width="213" 
-        height="120" 
-        src="https://www.youtube.com/embed/ETLjfH0bmgQ" 
-        title="Video GestorStock Shorts" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-      </div>
-         </div>
-        <aside style="width:360px">
-          <div class="services-horizontal">
-            <div class="card">
-              <strong>Software de inventarios</strong>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Licencia básica para gestión de materiales y productos terminados.</div>
-              <div class="precio">$3.500.000</div>
-              <button class="btn btn-primary add-to-cart" data-name="Software de inventarios" data-price="3500000" style="margin-top:6px;font-size:12px;padding:4px 8px">Agregar</button>
-            </div>
-            <div class="card">
-              <strong>Capacitación</strong>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Formación en sitio y remoto para personal de producción.</div>
-              <div class="precio">$1.000.000</div>
-              <button class="btn btn-primary add-to-cart" data-name="Capacitación" data-price="1000000" style="margin-top:6px;font-size:12px;padding:4px 8px">Agregar</button>
-            </div>
-            <div class="card">
-              <strong>Consultoría</strong>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Optimización de procesos y flujo de materiales.</div>
-              <div class="precio">$1.100.000</div>
-              <button class="btn btn-primary add-to-cart" data-name="Consultoría" data-price="1100000" style="margin-top:6px;font-size:12px;padding:4px 8px">Agregar</button>
-            </div>
-          </div>
-          <div style="margin-top:12px" class="card">
-            <strong>Contacta con nosotros</strong>
-            <div style="font-size:13px;color:var(--muted);margin-top:8px">Bucaramanga, Santander, Área Metropolitana<br/>Tel/WhatsApp: +57 316 561 6058<div style="font-size:13px;color:var(--muted)">Email: carlospineda@unc.edu.co<br/>Email: sandrafonseca@unc.edu.co</div>
-            <div style="margin-top:8px"><a class="btn" href="https://wa.me/573165616058" target="_blank">Contactar por WhatsApp</a></div>
-          </div>
-        </aside>
-      </div>
-    </section>
 
+    <!-- Contacta con nosotros a la derecha -->
+    <aside style="width:360px;">
+      <div class="card" style="margin-top:0;">
+        <strong>Contacta con nosotros</strong>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">
+          Bucaramanga, Santander, Área Metropolitana<br/>
+          Tel/WhatsApp: +57 316 561 6058<br/>
+          <span style="font-size:13px;color:var(--muted)">Email: carlospineda@unc.edu.co<br/>Email: sandrafonseca@unc.edu.co</span>
+          <div style="margin-top:8px">
+            <a class="btn" href="https://wa.me/573165616058" target="_blank">Contactar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Video debajo -->
+  <div style="margin-top:20px; max-width: 640px;">
+    <iframe 
+      width="640" 
+      height="360" 
+      src="https://www.youtube.com/embed/ETLjfH0bmgQ" 
+      title="Video GestorStock Shorts" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="border-radius:8px; width:100%; height:360px;">
+    </iframe>
+  </div>
+</section>
     <section id="quienes" style="margin-top:22px">
       <h2>Quienes somos</h2>
       <p style="color:var(--muted)">GestorStock nace para apoyar la transformación digital de fábricas de calzado en Bucaramanga y el área metropolitana. Combinamos software sencillo, consultoría y formación para optimizar procesos de inventario y producción.</p>
@@ -454,6 +440,7 @@
 </script>
 </body>
 </html>
+
 
 
 
